@@ -1,51 +1,89 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Baloo 2', cursive;
+  background-color: #fff8f0;
+  color: #333;
   margin: 0;
   padding: 0;
   text-align: center;
-  background-color: #fffaf0;
 }
 
 header {
-  background-color: #ff6f61;
+  background-color: #d48f4d;
   color: white;
-  padding: 20px 0;
+  padding: 20px;
 }
 
-header img.logo {
-  width: 100px;
+.logo {
+  width: 180px;
+  border-radius: 50%;
   display: block;
-  margin: 0 auto 10px;
+  margin: 0 auto 10px auto;
 }
 
-.categories {
+.nav-links {
+  list-style: none;
+  background: #f4c27a;
+  padding: 10px 0;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  margin: 30px 0;
+  margin: 0;
 }
 
-.category {
-  text-decoration: none;
+.nav-links li {
+  margin: 5px 15px;
+}
+
+.nav-links a {
   color: #333;
-  background-color: #ffe4e1;
-  margin: 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-links a:hover {
+  color: #a13d2d;
+}
+
+.category-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
   padding: 20px;
+}
+
+.category-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  width: 280px;
+  padding: 15px;
+}
+
+.category-card img {
+  width: 100%;
   border-radius: 10px;
-  width: 150px;
-  transition: transform 0.3s;
 }
 
-.category i {
-  margin-bottom: 10px;
-  color: #ff6f61;
+.btn {
+  display: inline-block;
+  background-color: #d48f4d;
+  color: white;
+  padding: 10px 20px;
+  margin-top: 10px;
+  text-decoration: none;
+  border-radius: 6px;
 }
 
-.category:hover {
-  transform: scale(1.1);
-  background-color: #ffd1c1;
+.btn:hover {
+  background-color: #a13d2d;
 }
 
 footer {
-  margin: 20px 0;
+  background-color: #f4c27a;
+  padding: 10px;
+  margin-top: 30px;
 }
+
+
+  
