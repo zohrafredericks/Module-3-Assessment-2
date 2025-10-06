@@ -1,0 +1,25 @@
+# System files
+.DS_Store
+Thumbs.db
+
+# Editor/IDE folders
+.vscode/
+.idea/
+
+# Node modules (if you ever use npm)
+node_modules/
+
+# Logs
+*.log
+
+# Build or distribution folders (if using a build system)
+dist/
+build/
+
+# Optional: Mac-specific metadata
+._*
+
+# Optional: Temporary files
+*.tmp
+*.bak
+
