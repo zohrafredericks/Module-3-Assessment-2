@@ -3,44 +3,90 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Main Meals - TastyBites</title>
-  <link rel="stylesheet" href="css/style.css">
+  <title>Main Meals | Masala Chai Cape Town</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Baloo+2:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
   <header>
-    <img src="images/logo.png" alt="TastyBites Logo" class="logo">
-    <h1>Main Meals</h1>
+    <img src="images/restuarantlogo.jpg" alt="Masala Chai Cape Town Logo" class="logo">
+    <h1 class="restaurant-name"><i class="fas fa-pepper-hot"></i> Masala Chai Cape Town <i class="fas fa-pepper-hot"></i></h1>
+    <p class="tagline">Traditional Cape Malay Cuisine in the Heart of Cape Town</p>
   </header>
 
   <main>
-    <div class="meal">
-      <img src="images/meal1.jpg" alt="Grilled Chicken Plate" style="max-width:200px;">
-      <h3>Grilled Chicken Plate</h3>
-      <p>Price: R150</p>
-      <p>Serving Size: 1 Plate</p>
-      <a href="customernotes.html" class="btn">Add Special Requests</a>
-    </div>
+    <section class="meals">
+      <h2><i class="fas fa-drumstick-bite"></i> Main Meals</h2>
 
-    <div class="meal">
-      <img src="images/meal2.jpg" alt="Veggie Pasta" style="max-width:200px;">
-      <h3>Veggie Pasta</h3>
-      <p>Price: R130</p>
-      <p>Serving Size: 1 Plate</p>
-      <a href="customernotes.html" class="btn">Add Special Requests</a>
-    </div>
+      <!-- Butter Chicken Curry -->
+      <div class="meal-card">
+        <img src="images/butter-chicken.jpg" alt="Butter Chicken Curry">
+        <h3>Butter Chicken Curry <i class="fas fa-pepper-hot" title="Spicy"></i> <i class="fas fa-star" title="Chef’s Special"></i></h3>
+        <p>Rich and creamy Butter Chicken Curry served with your choice of <strong>Naan</strong> or <strong>Roti</strong>.</p>
+        <p>Serving Size: 1 plate | Price: R120</p>
+        <ul>
+          <li>Naan Bread</li>
+          <li>Roti</li>
+          <li>Extra Mushrooms <i class="fas fa-leaf" title="Vegetarian"></i></li>
+          <li>Extra Cheese</li>
+        </ul>
+        <form>
+          <label for="butter-notes">Extra Notes / Requests:</label><br>
+          <input type="text" id="butter-notes" name="butter-notes" placeholder="Any special requests"><br><br>
+          <button type="submit" class="btn"><i class="fas fa-cart-plus"></i> Place Order</button>
+        </form>
+      </div>
 
-    <div class="meal">
-      <img src="images/meal3.jpg" alt="Beef Burger" style="max-width:200px;">
-      <h3>Beef Burger</h3>
-      <p>Price: R145</p>
-      <p>Serving Size: 1 Plate</p>
-      <a href="customernotes.html" class="btn">Add Special Requests</a>
-    </div>
+      <!-- Cape Malay Breyani -->
+      <div class="meal-card">
+        <img src="images/breyani.jpg" alt="Cape Malay Breyani">
+        <h3>Cape Malay Breyani <i class="fas fa-pepper-hot" title="Spicy"></i></h3>
+        <p>Traditional Cape Malay Breyani with tender meat, fragrant rice, and exotic spices.</p>
+        <p>Serving Size: 1 plate | Price: R110</p>
+        <ul>
+          <li>Raita Sauce</li>
+          <li>Extra Vegetables <i class="fas fa-leaf" title="Vegetarian"></i></li>
+          <li>Extra Chicken</li>
+        </ul>
+        <form>
+          <label for="breyani-notes">Extra Notes / Requests:</label><br>
+          <input type="text" id="breyani-notes" name="breyani-notes" placeholder="Any special requests"><br><br>
+          <button type="submit" class="btn"><i class="fas fa-cart-plus"></i> Place Order</button>
+        </form>
+      </div>
+
+      <!-- 100% Beef Burger -->
+      <div class="meal-card">
+        <img src="images/beef-burger.jpg" alt="100% Beef Burger">
+        <h3>100% Beef Burger <i class="fas fa-heart" title="Customer Favorite"></i></h3>
+        <p>Juicy beef burger served with your choice of <strong>Sweet Potato</strong> or <strong>Normal Fries</strong>.</p>
+        <p>Serving Size: 1 burger | Price: R95</p>
+        <ul>
+          <li>Sweet Potato Fries</li>
+          <li>Normal Fries</li>
+          <li>Extra Cheese</li>
+          <li>Extra Mushrooms <i class="fas fa-leaf" title="Vegetarian"></i></li>
+        </ul>
+        <form>
+          <label for="burger-notes">Extra Notes / Requests:</label><br>
+          <input type="text" id="burger-notes" name="burger-notes" placeholder="Any special requests"><br><br>
+          <button type="submit" class="btn"><i class="fas fa-cart-plus"></i> Place Order</button>
+        </form>
+      </div>
+
+    </section>
   </main>
 
   <footer>
-    <p><a href="index.html">Back to Home</a></p>
-    <p>&copy; 2025 TastyBites Restaurant</p>
+    <p>&copy; 2025 Masala Chai Cape Town | Designed with <i class="fas fa-heart"></i> in Cape Town</p>
   </footer>
+
 </body>
 </html>
