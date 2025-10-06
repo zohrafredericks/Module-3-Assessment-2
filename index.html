@@ -11,29 +11,28 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
-
   <style>
     body {
       font-family: 'Baloo 2', cursive;
       margin: 0;
       padding: 0;
-      background-color: #fff8f0;
+      background-color: #f4e3d2; /* soft beige-brown */
       color: #4b2e2e;
     }
 
     header {
       text-align: center;
       padding: 20px;
-      background-color: #d9743e;
+      background-color: #c46b34; /* richer brown */
       color: white;
     }
 
     header img.logo {
-      width: 150px;
+      width: 120px; /* smaller for subtlety */
       border-radius: 50%;
       margin-bottom: 10px;
+      filter: brightness(1.2) sepia(0.3) saturate(1.4);
+      opacity: 0.9;
     }
 
     header h1 {
@@ -47,7 +46,9 @@
       margin-bottom: 0;
     }
 
+    /* Hero section with overlay */
     .hero {
+      position: relative;
       background-image: url('images/masala-chai-hero.jpg');
       background-size: cover;
       background-position: center;
@@ -56,15 +57,70 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      color: #fff8f0;
+      color: #fff4e6;
       padding: 0 20px;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(196, 107, 52, 0.4); /* soft brown overlay */
+      z-index: 1;
     }
 
     .hero h2 {
+      position: relative;
+      z-index: 3;
       font-size: 2.5rem;
-      background-color: rgba(219, 101, 57, 0.7);
+      background-color: rgba(219, 101, 57, 0.6);
       padding: 15px;
       border-radius: 10px;
+    }
+
+    /* Steam animation */
+    .steam {
+      position: absolute;
+      bottom: 20px;
+      width: 30px;
+      height: 100px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      filter: blur(8px);
+      animation: rise 5s infinite;
+      z-index: 2;
+    }
+
+    .steam:nth-child(2) {
+      left: 45%;
+      animation-delay: 1s;
+    }
+    .steam:nth-child(3) {
+      left: 55%;
+      animation-delay: 2s;
+    }
+    .steam:nth-child(4) {
+      left: 50%;
+      animation-delay: 3s;
+    }
+
+    @keyframes rise {
+      0% {
+        transform: translateY(0) scaleX(1);
+        opacity: 0.2;
+      }
+      50% {
+        transform: translateY(-50px) scaleX(1.2);
+        opacity: 0.5;
+      }
+      100% {
+        transform: translateY(-120px) scaleX(1.5);
+        opacity: 0;
+      }
     }
 
     .intro {
@@ -74,7 +130,7 @@
 
     .intro h2 {
       font-size: 2rem;
-      color: #d9743e;
+      color: #c46b34;
       margin-bottom: 15px;
     }
 
@@ -82,18 +138,19 @@
       font-size: 1.1rem;
       max-width: 700px;
       margin: 0 auto;
+      line-height: 1.6;
     }
 
     /* Categories at the bottom */
     .categories {
-      background-color: #fff3e0;
+      background-color: #f7e4d0;
       padding: 60px 20px;
       text-align: center;
     }
 
     .categories h2 {
       font-size: 2.2rem;
-      color: #d9743e;
+      color: #c46b34;
       margin-bottom: 40px;
     }
 
@@ -105,23 +162,22 @@
     }
 
     .category-card {
-      background-color: #fff8f0;
+      background-color: #fff5e8;
       border-radius: 15px;
       width: 250px;
-      padding: 20px;
+      padding: 40px 20px; /* vertical spacing for balance */
       box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
+      transition: transform 0.3s, box-shadow 0.3s;
       text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center; /* vertically centers content */
+      align-items: center;
     }
 
     .category-card:hover {
       transform: scale(1.05);
-    }
-
-    .category-card img {
-      width: 100%;
-      border-radius: 10px;
-      margin-bottom: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
     }
 
     .category-card h3 {
@@ -137,7 +193,7 @@
     .category-card .btn {
       display: inline-block;
       padding: 10px 15px;
-      background-color: #d9743e;
+      background-color: #c46b34;
       color: white;
       text-decoration: none;
       border-radius: 8px;
@@ -146,18 +202,17 @@
     }
 
     .category-card .btn:hover {
-      background-color: #b35a2e;
+      background-color: #a65427;
     }
 
     footer {
-      background-color: #d9743e;
+      background-color: #c46b34;
       color: white;
       text-align: center;
       padding: 20px;
       margin-top: 40px;
     }
   </style>
-
 </head>
 <body>
 
@@ -169,6 +224,10 @@
 
   <section class="hero">
     <h2>Warm Your Soul with Every Sip & Bite</h2>
+    <div class="steam"></div>
+    <div class="steam"></div>
+    <div class="steam"></div>
+    <div class="steam"></div>
   </section>
 
   <section class="intro">
@@ -185,7 +244,6 @@
 
       <!-- Main Meals -->
       <div class="category-card">
-        <img src="images/main-meals.jpg" alt="Main Meals">
         <h3><i class="fas fa-drumstick-bite"></i> Main Meals</h3>
         <p>Butter Chicken, Cape Malay Breyani, and 100% Beef Burgers served with fries.</p>
         <a href="main-meals.html" class="btn"><i class="fas fa-utensils"></i> View Menu</a>
@@ -193,7 +251,6 @@
 
       <!-- Starters -->
       <div class="category-card">
-        <img src="images/starters.jpg" alt="Starters">
         <h3><i class="fas fa-seedling"></i> Starters</h3>
         <p>Samoosas, Dhaltjies & Half Moons — crispy, spicy perfection.</p>
         <a href="starters.html" class="btn"><i class="fas fa-leaf"></i> View Menu</a>
@@ -201,7 +258,6 @@
 
       <!-- Desserts -->
       <div class="category-card">
-        <img src="images/desserts.jpg" alt="Desserts">
         <h3><i class="fas fa-ice-cream"></i> Desserts</h3>
         <p>Sweet endings with Brownies, Koeksisters, and Soji.</p>
         <a href="desserts.html" class="btn"><i class="fas fa-ice-cream"></i> View Menu</a>
@@ -218,4 +274,3 @@
 </html>
 
 
-    
