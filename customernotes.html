@@ -3,34 +3,133 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Special Requests - TastyBites</title>
-  <link rel="stylesheet" href="css/style.css">
+  <title>Customer Notes | Masala Chai Cape Town</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Baloo+2:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Baloo 2', cursive;
+      margin: 0;
+      padding: 0;
+      background-color: #fff5e8;
+      color: #4b2e2e;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+      background-color: #c46b34;
+      color: white;
+    }
+
+    header img.logo {
+      width: 100px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+      filter: brightness(1.2) sepia(0.3) saturate(1.4);
+      opacity: 0.9;
+    }
+
+    header h1 {
+      font-family: 'Righteous', cursive;
+      font-size: 2rem;
+      margin-bottom: 5px;
+    }
+
+    main {
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #fff0e0;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: #c46b34;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 150px;
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid #c46b34;
+      font-size: 1rem;
+      resize: vertical;
+    }
+
+    .btn-submit {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 20px;
+      background-color: #c46b34;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .btn-submit:hover {
+      background-color: #a65427;
+    }
+
+    a.back-home {
+      display: block;
+      text-align: center;
+      margin: 30px auto 0;
+      text-decoration: none;
+      color: #c46b34;
+      font-weight: bold;
+    }
+
+    a.back-home:hover {
+      color: #a65427;
+    }
+
+    footer {
+      background-color: #c46b34;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <img src="images/logo.png" alt="TastyBites Logo" class="logo">
-    <h1>Special Requests for Your Meal</h1>
-  </header>
 
-  <main>
-    <div class="meal-notes">
-      <h2>Grilled Chicken Plate</h2>
-      <p><strong>Price:</strong> $12.99</p>
-      <p><strong>Serving Size:</strong> 1 Plate</p>
-      <p><strong>Description:</strong> Delicious grilled chicken served with fresh vegetables and a side of rice.</p>
+<header>
+  <img src="images/restaurantlogo.jpg" alt="Masala Chai Cape Town Logo" class="logo">
+  <h1>Masala Chai Cape Town</h1>
+</header>
 
-      <form action="thank-you.html">
-        <label for="notes">Add any extra requests or special instructions:</label><br>
-        <textarea id="notes" name="notes" rows="6" cols="50" placeholder="E.g., No onions, extra sauce, cut into pieces..."></textarea><br><br>
-        <button type="submit">Submit Requests & Place Order</button>
-      </form>
+<main>
+  <h2>Customer Notes</h2>
+  <form action="#" method="POST">
+    <label for="notes">Write any special instructions, dietary requests, or notes for your order:</label>
+    <textarea id="notes" name="notes" placeholder="e.g., No peanuts, extra spicy, cut into halves..."></textarea>
+    <button type="submit" class="btn-submit">Submit Notes</button>
+  </form>
+</main>
 
-      <p><a href="main-meals.html">Back to Meals</a></p>
-    </div>
-  </main>
+<a href="orderpage.html" class="back-home"><i class="fas fa-arrow-left"></i> Back to Order Page</a>
 
-  <footer>
-    <p>&copy; 2025 TastyBites Restaurant</p>
-  </footer>
+<footer>
+  <p>&copy; 2025 Masala Chai Cape Town | Designed with <i class="fas fa-heart"></i> in Cape Town</p>
+</footer>
+
 </body>
 </html>
+
+      
