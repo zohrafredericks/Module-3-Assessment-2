@@ -26,7 +26,7 @@ header {
   height: 250px;
   display: block;
   margin: 0 auto 10px;
-  border-radius: 50%;
+  /* Square logo - no border-radius */
   box-shadow: 0 0 15px rgba(0,0,0,0.3);
   object-fit: cover;
 }
@@ -134,7 +134,7 @@ footer {
   margin-top: 50px;
 }
 
-/* ------------------------------- Meal Cards --------------------------------*/
+/* ------------------------------- Meal Cards / Meal Info --------------------------------*/
 .meal-card, .meal-info {
   background-color: #fff2e0; /* very light warm beige */
   padding: 20px;
