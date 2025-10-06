@@ -3,44 +3,209 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Starters - TastyBites</title>
-  <link rel="stylesheet" href="css/style.css">
+  <title>Starters | Masala Chai Cape Town</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Baloo+2:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      font-family: 'Baloo 2', cursive;
+      margin: 0;
+      padding: 0;
+      background-color: #fff2e0;
+      color: #4b2e2e;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+      background-color: #d9743e;
+      color: white;
+    }
+
+    header img.logo {
+      width: 100px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+      filter: brightness(1.2) sepia(0.3) saturate(1.4);
+      opacity: 0.9;
+    }
+
+    header h1 {
+      font-family: 'Righteous', cursive;
+      font-size: 2rem;
+      margin-bottom: 5px;
+    }
+
+    header p {
+      font-size: 1rem;
+      margin-bottom: 0;
+    }
+
+    .hero {
+      background-color: #d9743e;
+      text-align: center;
+      color: #fff4e6;
+      padding: 50px 20px;
+    }
+
+    .hero h2 {
+      font-size: 2rem;
+      margin: 0;
+    }
+
+    .intro {
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    .intro p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .menu-items {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 40px 20px;
+    }
+
+    .dish-card {
+      background-color: #fff2e0;
+      border-radius: 15px;
+      width: 250px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .dish-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .dish-card img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .dish-card h3 {
+      margin-bottom: 10px;
+      color: #d9743e;
+    }
+
+    .dish-card p {
+      font-size: 0.95rem;
+      margin-bottom: 15px;
+    }
+
+    .dish-card .price {
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .dish-card .btn {
+      display: inline-block;
+      padding: 10px 15px;
+      background-color: #d9743e;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .dish-card .btn:hover {
+      background-color: #b55b27;
+    }
+
+    footer {
+      background-color: #d9743e;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    a.back-home {
+      display: inline-block;
+      margin-top: 20px;
+      text-decoration: none;
+      color: #d9743e;
+      font-weight: bold;
+    }
+
+    a.back-home:hover {
+      color: #b55b27;
+    }
+  </style>
 </head>
 <body>
+
   <header>
-    <img src="images/logo.png" alt="TastyBites Logo" class="logo">
-    <h1>Starters</h1>
+    <img src="images/restaurantlogo.jpg" alt="Masala Chai Cape Town Logo" class="logo">
+    <h1>Masala Chai Cape Town</h1>
+    <p>Traditional Cape Malay Cuisine in the Heart of Cape Town</p>
   </header>
 
-  <main>
-    <div class="meal">
-      <img src="images/starter1.jpg" alt="Bruschetta" style="max-width:200px;">
-      <h3>Bruschetta</h3>
-      <p>Price: R95</p>
-      <p>Serving Size: 1 Plate</p>
-      <a href="customernotes.html" class="btn">Add Special Requests</a>
+  <section class="hero">
+    <h2>Starters</h2>
+  </section>
+
+  <section class="intro">
+    <p>Start your meal with our delicious Cape Malay starters, full of flavor and perfect to share.</p>
+  </section>
+
+  <section class="menu-items">
+    <!-- Samoosa -->
+    <div class="dish-card">
+      <img src="images/samoosa1.jpg" alt="Samoosa">
+      <h3>Samoosa</h3>
+      <p>Crispy pastry filled with spiced vegetables or meat, fried to golden perfection.</p>
+      <p class="price">R25</p>
+      <a href="#" class="btn">Order Now</a>
     </div>
 
-    <div class="meal">
-      <img src="images/starter2.jpg" alt="Garlic Bread" style="max-width:200px;">
-      <h3>Garlic Bread</h3>
-      <p>Price: R75</p>
-      <p>Serving Size: 1 Plate</p>
-      <a href="customernotes.html" class="btn">Add Special Requests</a>
+    <!-- Dhaltjie -->
+    <div class="dish-card">
+      <img src="images/dhaltjie1.jpg" alt="Dhaltjie">
+      <h3>Dhaltjie</h3>
+      <p>Deep-fried lentil fritters, lightly spiced and crunchy on the outside.</p>
+      <p class="price">R30</p>
+      <a href="#" class="btn">Order Now</a>
     </div>
 
-    <div class="meal">
-      <img src="images/starter3.jpg" alt="Stuffed Mushrooms" style="max-width:200px;">
-      <h3>Stuffed Mushrooms</h3>
-      <p>Price: R110</p>
-      <p>Serving Size: 1 Plate</p>
-      <a href="customernotes.html" class="btn">Add Special Requests</a>
+    <!-- Half Moon -->
+    <div class="dish-card">
+      <img src="images/halfmoon1.jpg" alt="Half Moon">
+      <h3>Half Moon</h3>
+      <p>Delicate crescent-shaped pastries with a sweet or savory filling, lightly fried.</p>
+      <p class="price">R28</p>
+      <a href="#" class="btn">Order Now</a>
     </div>
-  </main>
+  </section>
+
+  <div style="text-align:center;">
+    <a href="index.html" class="back-home"><i class="fas fa-arrow-left"></i> Back to Home</a>
+  </div>
 
   <footer>
-    <p><a href="index.html">Back to Home</a></p>
-    <p>&copy; 2025 TastyBites Restaurant</p>
+    <p>&copy; 2025 Masala Chai Cape Town | Designed with <i class="fas fa-heart"></i> in Cape Town</p>
   </footer>
+
 </body>
 </html>
