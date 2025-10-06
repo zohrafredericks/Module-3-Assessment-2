@@ -3,37 +3,67 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TastyBites Restaurant</title>
-  <link rel="stylesheet" href="css/style.css">
+  <title>Masala Chai Cape Town | Home</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Baloo+2:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
   <header>
-    <img src="images/logo.png" alt="TastyBites Logo" class="logo">
-    <h1>TastyBites</h1>
-    <p>Delicious meals delivered with love 🍽️</p>
+    <img src="images/restuarantlogo.jpg" alt="Masala Chai Cape Town Logo" class="logo">
+    <h1 class="restaurant-name">Masala Chai Cape Town</h1>
+    <p class="tagline">Traditional Cape Malay Cuisine in the Heart of Cape Town</p>
   </header>
 
   <main>
-    <h2>Choose a Category</h2>
-    <div class="categories">
-      <a href="main-meals.html" class="category">
-        <i class="fas fa-drumstick-bite fa-3x"></i>
-        <h3>Main Meals</h3>
-      </a>
-      <a href="starters.html" class="category">
-        <i class="fas fa-carrot fa-3x"></i>
-        <h3>Starters</h3>
-      </a>
-      <a href="desserts.html" class="category">
-        <i class="fas fa-ice-cream fa-3x"></i>
-        <h3>Desserts</h3>
-      </a>
-    </div>
+    <section class="intro">
+      <h2 class="welcome">Welcome to Our Menu</h2>
+      <p class="intro-text">Step into a world of warm spices, traditional recipes, and Cape Town charm. 
+         From rich Butter Chicken Curry to fresh Koeksisters — every dish is made with love and authenticity.</p>
+    </section>
+
+    <section class="categories">
+      <h2>Explore Our Menu</h2>
+      <div class="category-grid">
+
+        <!-- Main Meals -->
+        <div class="category-card">
+          <img src="images/main-meals.jpg" alt="Main Meals">
+          <h3>Main Meals</h3>
+          <p>Butter Chicken, Cape Malay Breyani, and 100% Beef Burgers served with fries.</p>
+          <a href="main-meals.html" class="btn"><i class="fas fa-utensils"></i> View Menu</a>
+        </div>
+
+        <!-- Starters -->
+        <div class="category-card">
+          <img src="images/starters.jpg" alt="Starters">
+          <h3>Starters</h3>
+          <p>Samoosas, Dhaltjies & Half Moons — crispy, spicy perfection.</p>
+          <a href="starters.html" class="btn"><i class="fas fa-seedling"></i> View Menu</a>
+        </div>
+
+        <!-- Desserts -->
+        <div class="category-card">
+          <img src="images/desserts.jpg" alt="Desserts">
+          <h3>Desserts</h3>
+          <p>Sweet endings with Brownies, Koeksisters, and Soji.</p>
+          <a href="desserts.html" class="btn"><i class="fas fa-ice-cream"></i> View Menu</a>
+        </div>
+
+      </div>
+    </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 TastyBites Restaurant</p>
+    <p>&copy; 2025 Masala Chai Cape Town | Designed with ❤️ in Cape Town</p>
   </footer>
+
 </body>
 </html>
