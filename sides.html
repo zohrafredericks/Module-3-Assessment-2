@@ -56,7 +56,6 @@
       margin-bottom: 0;
     }
 
-    /* Navigation */
     nav {
       background-color: #f5d6a0;
       padding: 10px 0;
@@ -77,7 +76,6 @@
       color: #c46b34;
     }
 
-    /* Hero Section */
     .hero {
       background-color: #c46b34;
       text-align: center;
@@ -102,7 +100,6 @@
       line-height: 1.6;
     }
 
-    /* Dish Cards */
     .menu-items {
       display: flex;
       flex-wrap: wrap;
@@ -187,10 +184,36 @@
       margin-top: 40px;
     }
 
-    /* Responsive */
+    /* Selected Dish Placeholder */
+    .selected-placeholder {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      border: 2px dashed #c46b34;
+      border-radius: 15px;
+      text-align: center;
+      background-color: #fff0dc;
+    }
+
+    .selected-placeholder img {
+      width: 300px;
+      border-radius: 15px;
+      margin-bottom: 15px;
+    }
+
+    .selected-placeholder p {
+      font-size: 1.1rem;
+      color: #4b2e2e;
+    }
+
+    .selected-placeholder .btn {
+      margin-top: 15px;
+    }
+
     @media (max-width: 768px) {
       .dish-card { width: 90%; margin: 15px auto; }
       nav a { display: block; margin: 6px 0; }
+      .selected-placeholder img { width: 90%; }
     }
   </style>
 </head>
@@ -202,7 +225,6 @@
   <p>Traditional Cape Malay Cuisine in the Heart of Cape Town</p>
 </header>
 
-<!-- Navigation Menu -->
 <nav>
   <a href="main-meals.html">Main Meals</a>
   <a href="starters.html">Starters</a>
@@ -227,7 +249,7 @@
     <h3>Naan Bread</h3>
     <p>Soft, fluffy, and freshly baked Indian-style flatbread.</p>
     <p class="price">R15</p>
-    <a href="orderpage.html" class="btn">Order Now</a>
+    <a href="#" class="btn">Order Now</a>
   </div>
 
   <div class="dish-card">
@@ -235,7 +257,7 @@
     <h3>Roti</h3>
     <p>Traditional Cape Malay round flatbread, perfect to scoop up curries.</p>
     <p class="price">R12</p>
-    <a href="orderpage.html" class="btn">Order Now</a>
+    <a href="#" class="btn">Order Now</a>
   </div>
 
   <div class="dish-card">
@@ -243,7 +265,7 @@
     <h3>Dhania Chutney</h3>
     <p>Fresh coriander-based chutney with a zesty, tangy flavor.</p>
     <p class="price">R8</p>
-    <a href="orderpage.html" class="btn">Order Now</a>
+    <a href="#" class="btn">Order Now</a>
   </div>
 
   <div class="dish-card">
@@ -251,7 +273,7 @@
     <h3>Sweet Chilli Sauce</h3>
     <p>Perfectly balanced sweet and spicy dipping sauce for your meal.</p>
     <p class="price">R10</p>
-    <a href="orderpage.html" class="btn">Order Now</a>
+    <a href="#" class="btn">Order Now</a>
   </div>
 
   <div class="dish-card">
@@ -259,16 +281,25 @@
     <h3>Potato Fries</h3>
     <p>Crispy golden fries, freshly cut and fried to perfection.</p>
     <p class="price">R25</p>
-    <a href="orderpage.html" class="btn">Order Now</a>
+    <a href="#" class="btn">Order Now</a>
   </div>
 
   <div class="dish-card">
     <img src="images/sweetpotatofries.jpg" alt="Sweet Potato Fries">
     <h3>Sweet Potato Fries</h3>
-    <p>Crispy and lightly seasoned sweet potato fries, a delicious alternative.</p>
-    <p class="price">R28</p>
-    <a href="orderpage.html" class="btn">Order Now</a>
+    <p>Golden and crispy sweet potato fries, lightly seasoned.</p>
+    <p class="price">R30</p>
+    <a href="#" class="btn">Order Now</a>
   </div>
+</section>
+
+<!-- Selected Dish Placeholder -->
+<section class="selected-placeholder" id="selected-placeholder">
+  <img src="" alt="Selected Dish" id="selected-image" style="display:none;">
+  <div class="selected-details" id="selected-details">
+    <p>🍽 Select a Dish to See Details Here</p>
+  </div>
+  <a href="thankyou.html" class="btn" id="placeholder-order-btn" style="display:none;">Place Order</a>
 </section>
 
 <div style="text-align:center;">
@@ -279,7 +310,28 @@
   <p>&copy; 2025 Masala Chai Cape Town | Designed with <i class="fas fa-heart"></i> in Cape Town</p>
 </footer>
 
+<script>
+  const dishCards = document.querySelectorAll('.dish-card');
+  const selectedImage = document.getElementById('selected-image');
+  const selectedDetails = document.getElementById('selected-details');
+  const placeholderOrderBtn = document.getElementById('placeholder-order-btn');
+
+  dishCards.forEach(card => {
+    card.addEventListener('click', () => {
+      const imgSrc = card.querySelector('img').src;
+      const name = card.querySelector('h3').textContent;
+      const desc = card.querySelector('p').textContent;
+      const price = card.querySelector('.price').textContent;
+
+      selectedImage.src = imgSrc;
+      selectedImage.style.display = 'block';
+      selectedDetails.innerHTML = `<h3>${name}</h3><p>${desc}</p><p class="price">${price}</p>`;
+      
+      // Show the order button
+      placeholderOrderBtn.style.display = 'inline-block';
+    });
+  });
+</script>
+
 </body>
 </html>
-
-
