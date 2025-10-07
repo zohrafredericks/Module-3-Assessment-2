@@ -12,25 +12,178 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
-    body { font-family: 'Baloo 2', cursive; margin: 0; padding: 0; background-color: #fff5e8; color: #4b2e2e; }
-    header { text-align: center; padding: 20px; background-color: #c46b34; color: white; }
-    header img.logo { width: 100px; border-radius: 50%; margin-bottom: 10px; filter: brightness(1.2) sepia(0.3) saturate(1.4); opacity: 0.9; }
-    header h1 { font-family: 'Righteous', cursive; font-size: 2rem; margin-bottom: 5px; }
+    body {
+      font-family: 'Baloo 2', cursive;
+      margin: 0;
+      padding: 0;
+      background-color: #fff5e8;
+      color: #4b2e2e;
+    }
 
-    .order-container { max-width: 900px; margin: 40px auto; display: flex; flex-wrap: wrap; gap: 40px; justify-content: center; align-items: flex-start; }
-    .dish-image { flex: 1 1 300px; text-align: center; }
-    .dish-image img { width: 100%; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-    .dish-details { flex: 1 1 400px; background-color: #fff5e8; border-radius: 15px; padding: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-    .dish-details h2 { color: #c46b34; margin-bottom: 15px; }
-    .dish-details p { font-size: 1rem; margin-bottom: 10px; line-height: 1.5; }
-    .dish-details .price { font-weight: bold; font-size: 1.2rem; margin-bottom: 15px; }
-    .dish-details label { display: block; margin-top: 15px; margin-bottom: 5px; font-weight: bold; }
-    .dish-details select, .dish-details input[type="number"] { width: 100%; padding: 8px; border-radius: 8px; border: 1px solid #c46b34; margin-bottom: 15px; font-size: 1rem; }
-    .dish-details .btn { display: inline-block; padding: 12px 20px; background-color: #c46b34; color: white; text-decoration: none; border-radius: 8px; font-weight: bold; transition: background-color 0.3s; }
-    .dish-details .btn:hover { background-color: #a65427; }
-    footer { background-color: #c46b34; color: white; text-align: center; padding: 20px; margin-top: 40px; }
-    a.back-home { display: inline-block; margin: 20px auto; text-decoration: none; color: #c46b34; font-weight: bold; }
-    a.back-home:hover { color: #a65427; }
+    header {
+      text-align: center;
+      padding: 20px;
+      background-color: #c46b34;
+      color: white;
+    }
+
+    header img.logo {
+      width: 130px;
+      height: 130px;
+      border-radius: 15px;
+      margin-bottom: 10px;
+      filter: brightness(1.2) sepia(0.3) saturate(1.4);
+      opacity: 0.95;
+      object-fit: cover;
+      border: 3px solid #f4e3d2;
+      box-shadow: 0 4px 12px rgba(196, 107, 52, 0.5);
+    }
+
+    header h1 {
+      font-family: 'Righteous', cursive;
+      font-size: 2.5rem;
+      margin-bottom: 5px;
+    }
+
+    nav {
+      text-align: center;
+      margin: 15px 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      margin: 0 15px;
+      font-size: 1.1rem;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #f4e3d2;
+    }
+
+    .order-container {
+      max-width: 1200px;
+      margin: 40px auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+
+    .dish-card {
+      background-color: #fff5e8;
+      border-radius: 15px;
+      width: 250px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .dish-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .dish-card img {
+      width: 100%;
+      border-radius: 15px;
+      margin-bottom: 15px;
+      object-fit: cover;
+    }
+
+    .dish-card h3 {
+      margin-bottom: 10px;
+      color: #c46b34;
+    }
+
+    .dish-card p {
+      font-size: 0.95rem;
+      margin-bottom: 10px;
+    }
+
+    .dish-card .price {
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .dish-card .btn {
+      display: inline-block;
+      padding: 10px 15px;
+      background-color: #c46b34;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .dish-card .btn:hover {
+      background-color: #a65427;
+    }
+
+    #selected-dish-container {
+      max-width: 900px;
+      margin: 40px auto;
+      background-color: #fff5e8;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    #selected-dish-container img {
+      width: 100%;
+      border-radius: 15px;
+      margin-bottom: 15px;
+    }
+
+    #selected-dish-container h2 { color: #c46b34; margin-bottom: 15px; }
+    #selected-dish-container p { margin-bottom: 10px; line-height: 1.5; }
+    #selected-dish-container .price { font-weight: bold; font-size: 1.2rem; margin-bottom: 15px; }
+
+    #selected-dish-container label {
+      display: block;
+      margin-top: 15px;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    #selected-dish-container select,
+    #selected-dish-container input[type="number"] {
+      width: 100%;
+      padding: 8px;
+      border-radius: 8px;
+      border: 1px solid #c46b34;
+      margin-bottom: 15px;
+      font-size: 1rem;
+    }
+
+    footer {
+      background-color: #c46b34;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    a.back-home {
+      display: inline-block;
+      margin: 20px auto;
+      text-decoration: none;
+      color: #c46b34;
+      font-weight: bold;
+    }
+
+    a.back-home:hover {
+      color: #a65427;
+    }
   </style>
 </head>
 <body>
@@ -38,55 +191,94 @@
 <header>
   <img src="images/restaurantlogo.jpg" alt="Masala Chai Cape Town Logo" class="logo">
   <h1>Masala Chai Cape Town</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="mainmeals.html">Main Meals</a>
+    <a href="starters.html">Starters</a>
+    <a href="desserts.html">Desserts</a>
+    <a href="sides.html">Sides</a>
+  </nav>
 </header>
 
 <div class="order-container">
-  <div class="dish-image">
-    <img src="" alt="Dish Image" id="dish-image">
+  <div class="dish-card" data-dish="breyani">
+    <img src="images/breyani1.jpg" alt="Breyani">
+    <h3>Breyani</h3>
+    <p>Traditional Cape Malay Breyani served with sambals and salad.</p>
+    <p class="price">R95</p>
   </div>
 
-  <div class="dish-details">
-    <label for="dish-select">Select a Dish:</label>
-    <select id="dish-select">
-      <optgroup label="Main Meals">
-        <option value="breyani">Breyani</option>
-        <option value="butterchicken">Butter Chicken Curry</option>
-        <option value="beefburger">Beef Burger</option>
-      </optgroup>
-      <optgroup label="Starters">
-        <option value="samoosa">Samoosa</option>
-        <option value="dhaltjie">Dhaltjie</option>
-        <option value="halfmoon">Half Moon</option>
-      </optgroup>
-      <optgroup label="Desserts">
-        <option value="brownie">Brownie</option>
-        <option value="koeksister">Koeksister</option>
-        <option value="soji">Soji</option>
-      </optgroup>
-      <optgroup label="Sides">
-        <option value="naan">Naan</option>
-        <option value="roti">Roti</option>
-        <option value="dhaniachutney">Dhania Chutney</option>
-        <option value="sweetchillisauce">Sweet Chilli Sauce</option>
-        <option value="potatofries">Potato Fries</option>
-      </optgroup>
-    </select>
-
-    <h2 id="dish-name"></h2>
-    <p id="dish-description"></p>
-    <p class="price" id="dish-price"></p>
-    <p><strong>Serving Size:</strong> <span id="dish-size"></span></p>
-
-    <div id="extras-container">
-      <label for="extras">Extras:</label>
-      <select id="extras"></select>
-    </div>
-
-    <label for="quantity">Quantity:</label>
-    <input type="number" id="quantity" min="1" value="1">
-
-    <a href="#" class="btn">Order Now</a>
+  <div class="dish-card" data-dish="butterchicken">
+    <img src="images/butterchicken1.jpg" alt="Butter Chicken Curry">
+    <h3>Butter Chicken Curry</h3>
+    <p>Rich and creamy Cape Malay-style curry.</p>
+    <p class="price">R105</p>
   </div>
+
+  <div class="dish-card" data-dish="beefburger">
+    <img src="images/beefburger1.jpg" alt="Beef Burger">
+    <h3>Beef Burger</h3>
+    <p>Juicy beef patty with fresh toppings.</p>
+    <p class="price">R85</p>
+  </div>
+
+  <div class="dish-card" data-dish="samoosa">
+    <img src="images/samoosa2.jpg" alt="Samoosa">
+    <h3>Samoosa</h3>
+    <p>Golden triangular pastries with spiced filling.</p>
+    <p class="price">R25</p>
+  </div>
+
+  <div class="dish-card" data-dish="dhaltjie">
+    <img src="images/dhaltjie3.jpg" alt="Dhaltjie">
+    <h3>Dhaltjie</h3>
+    <p>Crispy lentil fritters, lightly spiced, perfect with chutney.</p>
+    <p class="price">R30</p>
+  </div>
+
+  <div class="dish-card" data-dish="halfmoon">
+    <img src="images/halfmoon2.jpg" alt="Half Moon">
+    <h3>Half Moon</h3>
+    <p>Delicate crescent-shaped pastries, lightly fried and filled.</p>
+    <p class="price">R28</p>
+  </div>
+
+  <div class="dish-card" data-dish="brownie">
+    <img src="images/brownie3.jpg" alt="Brownie">
+    <h3>Brownie</h3>
+    <p>Rich chocolate brownie served with a hint of nuts.</p>
+    <p class="price">R35</p>
+  </div>
+
+  <div class="dish-card" data-dish="soji">
+    <img src="images/soji2.jpg" alt="Soji Pudding">
+    <h3>Soji Pudding</h3>
+    <p>Soft semolina pudding with aromatic spices and syrup.</p>
+    <p class="price">R30</p>
+  </div>
+
+  <div class="dish-card" data-dish="koeksister">
+    <img src="images/koeksister2.jpg" alt="Koeksister">
+    <h3>Koeksister</h3>
+    <p>Traditional Cape Malay twisted dough sweet, soaked in syrup.</p>
+    <p class="price">R25</p>
+  </div>
+</div>
+
+<div id="selected-dish-container" style="display:none;">
+  <img id="selected-dish-image" src="" alt="">
+  <h2 id="selected-dish-name"></h2>
+  <p id="selected-dish-description"></p>
+  <p class="price" id="selected-dish-price"></p>
+  <p><strong>Serving Size:</strong> <span id="selected-dish-size"></span></p>
+
+  <label for="extras">Extras:</label>
+  <select id="selected-dish-extras"></select>
+
+  <label for="quantity">Quantity:</label>
+  <input type="number" id="selected-dish-quantity" min="1" value="1">
+
+  <a href="#" class="btn">Order Now</a>
 </div>
 
 <div style="text-align:center;">
@@ -99,59 +291,51 @@
 
 <script>
 const dishes = {
-  // Main Meals
-  breyani: { name: "Breyani", description: "Traditional Cape Malay Breyani served with sambals and salad.", price: "R95", size: "1 plate", image: "images/breyani1.jpg", extras: ["None"] },
-  butterchicken: { name: "Butter Chicken Curry", description: "Rich and creamy Cape Malay-style curry.", price: "R105", size: "1 plate", image: "images/butterchicken1.jpg", extras: ["Naan", "Roti"] },
-  beefburger: { name: "Beef Burger", description: "Juicy beef patty with fresh toppings.", price: "R85", size: "1 burger", image: "images/beefburger1.jpg", extras: ["Potato Fries", "Sweet Potato Fries"] },
-  // Starters
-  samoosa: { name: "Samoosa", description: "Golden triangular pastries with a spiced filling.", price: "R25", size: "2 pieces", image: "images/samoosa1.jpg", extras: ["Dhania Chutney", "Sweet Chilli Sauce"] },
-  dhaltjie: { name: "Dhaltjie", description: "Crispy lentil fritters, lightly spiced, perfect with chutney.", price: "R30", size: "3 pieces", image: "images/dhaltjie1.jpg", extras: ["Dhania Chutney", "Sweet Chilli Sauce"] },
-  halfmoon: { name: "Half Moon", description: "Delicate crescent-shaped pastries, lightly fried and filled.", price: "R28", size: "2 pieces", image: "images/halfmoon1.jpg", extras: ["Dhania Chutney", "Sweet Chilli Sauce"] },
-  // Desserts
-  brownie: { name: "Brownie", description: "Rich chocolate brownie served with a hint of nuts.", price: "R35", size: "1 slice", image: "images/brownie1.jpg", extras: ["None"] },
-  koeksister: { name: "Koeksister", description: "Traditional Cape Malay twisted dough sweet, soaked in syrup.", price: "R25", size: "1 piece", image: "images/koeksister1.jpg", extras: ["None"] },
-  soji: { name: "Soji", description: "Soft semolina pudding with aromatic spices and syrup.", price: "R30", size: "1 serving", image: "images/soji1.jpg", extras: ["None"] },
-  // Sides
-  naan: { name: "Naan", description: "Soft, freshly baked Indian flatbread.", price: "R15", size: "1 piece", image: "images/naan.jpg", extras: ["None"] },
-  roti: { name: "Roti", description: "Traditional Indian roti bread, lightly spiced.", price: "R15", size: "1 piece", image: "images/roti.jpg", extras: ["None"] },
-  dhaniachutney: { name: "Dhania Chutney", description: "Fresh coriander chutney, slightly spicy and aromatic.", price: "R10", size: "1 small bowl", image: "images/dhaniachutney.jpg", extras: ["None"] },
-  sweetchillisauce: { name: "Sweet Chilli Sauce", description: "Sweet and mildly spicy dipping sauce.", price: "R10", size: "1 small bowl", image: "images/sweetchillisauce.jpg", extras: ["None"] },
-  potatofries: { name: "Potato Fries", description: "Crispy golden fries, perfectly salted.", price: "R20", size: "1 serving", image: "images/potatofries.jpg", extras: ["None"] }
+  breyani: {name:"Breyani",description:"Traditional Cape Malay Breyani served with sambals and salad.",price:"R95",size:"1 plate",image:"images/breyani1.jpg",extras:["None"]},
+  butterchicken: {name:"Butter Chicken Curry",description:"Rich and creamy Cape Malay-style curry.",price:"R105",size:"1 plate",image:"images/butterchicken1.jpg",extras:["Naan","Roti"]},
+  beefburger: {name:"Beef Burger",description:"Juicy beef patty with fresh toppings.",price:"R85",size:"1 burger",image:"images/beefburger1.jpg",extras:["Potato Fries","Sweet Potato Fries"]},
+  samoosa: {name:"Samoosa",description:"Golden triangular pastries with spiced filling.",price:"R25",size:"2 pieces",image:"images/samoosa2.jpg",extras:["Dhania Chutney","Sweet Chilli Sauce"]},
+  dhaltjie: {name:"Dhaltjie",description:"Crispy lentil fritters, lightly spiced, perfect with chutney.",price:"R30",size:"3 pieces",image:"images/dhaltjie3.jpg",extras:["Dhania Chutney","Sweet Chilli Sauce"]},
+  halfmoon: {name:"Half Moon",description:"Delicate crescent-shaped pastries, lightly fried and filled.",price:"R28",size:"2 pieces",image:"images/halfmoon2.jpg",extras:["Dhania Chutney","Sweet Chilli Sauce"]},
+  brownie: {name:"Brownie",description:"Rich chocolate brownie served with a hint of nuts.",price:"R35",size:"1 slice",image:"images/brownie3.jpg",extras:["None"]},
+  soji: {name:"Soji Pudding",description:"Soft semolina pudding with aromatic spices and syrup.",price:"R30",size:"1 serving",image:"images/soji2.jpg",extras:["None"]},
+  koeksister: {name:"Koeksister",description:"Traditional Cape Malay twisted dough sweet, soaked in syrup.",price:"R25",size:"1 piece",image:"images/koeksister2.jpg",extras:["None"]}
 };
 
-const dishSelect = document.getElementById("dish-select");
-const dishName = document.getElementById("dish-name");
-const dishDesc = document.getElementById("dish-description");
-const dishPrice = document.getElementById("dish-price");
-const dishSize = document.getElementById("dish-size");
-const dishImage = document.getElementById("dish-image");
-const extrasContainer = document.getElementById("extras-container");
-const extrasSelect = document.getElementById("extras");
+const selectedContainer = document.getElementById("selected-dish-container");
+const selectedImage = document.getElementById("selected-dish-image");
+const selectedName = document.getElementById("selected-dish-name");
+const selectedDesc = document.getElementById("selected-dish-description");
+const selectedPrice = document.getElementById("selected-dish-price");
+const selectedSize = document.getElementById("selected-dish-size");
+const selectedExtras = document.getElementById("selected-dish-extras");
 
-function updateDish() {
-  const selected = dishSelect.value;
-  const dish = dishes[selected];
+document.querySelectorAll(".dish-card").forEach(card => {
+  card.addEventListener("click", () => {
+    const dishKey = card.getAttribute("data-dish");
+    const dish = dishes[dishKey];
 
-  dishName.textContent = dish.name;
-  dishDesc.textContent = dish.description;
-  dishPrice.textContent = dish.price;
-  dishSize.textContent = dish.size;
-  dishImage.src = dish.image;
+    selectedImage.src = dish.image;
+    selectedImage.alt = dish.name;
+    selectedName.textContent = dish.name;
+    selectedDesc.textContent = dish.description;
+    selectedPrice.textContent = dish.price;
+    selectedSize.textContent = dish.size;
 
-  extrasSelect.innerHTML = "";
-  dish.extras.forEach(extra => {
-    const option = document.createElement("option");
-    option.value = extra.toLowerCase().replace(/\s/g, "");
-    option.textContent = extra;
-    extrasSelect.appendChild(option);
+    selectedExtras.innerHTML = "";
+    dish.extras.forEach(extra => {
+      const opt = document.createElement("option");
+      opt.value = extra.toLowerCase().replace(/\s/g,"");
+      opt.textContent = extra;
+      selectedExtras.appendChild(opt);
+    });
+
+    selectedContainer.style.display = "block";
+    window.scrollTo({ top: selectedContainer.offsetTop - 20, behavior: 'smooth' });
   });
-
-  extrasContainer.style.display = dish.extras.length === 1 && dish.extras[0] === "None" ? "none" : "block";
-}
-
-dishSelect.addEventListener("change", updateDish);
-updateDish();
+});
 </script>
 
 </body>
 </html>
+
