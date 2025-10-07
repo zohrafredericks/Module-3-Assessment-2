@@ -13,9 +13,27 @@
 
   <style>
     body { font-family: 'Baloo 2', cursive; margin: 0; padding: 0; background-color: #fff5e8; color: #4b2e2e; }
+
     header { text-align: center; padding: 20px; background-color: #c46b34; color: white; }
     header img.logo { width: 130px; height: 130px; border-radius: 15px; margin-bottom: 10px; filter: brightness(1.2) sepia(0.3) saturate(1.4); opacity: 0.95; object-fit: cover; border: 3px solid #f4e3d2; box-shadow: 0 4px 12px rgba(196, 107, 52, 0.5); }
     header h1 { font-family: 'Righteous', cursive; font-size: 2.5rem; margin-bottom: 5px; }
+
+    /* Navigation links at top */
+    nav {
+      background-color: #f5d6a0;
+      padding: 10px 0;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    nav a {
+      color: #4b2e05;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 0 12px;
+      font-size: 1.1em;
+      transition: color 0.3s;
+    }
+    nav a:hover { color: #c46b34; }
 
     .menu-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 40px 20px; }
     .dish-card { width: 250px; background-color: #fff5e8; border-radius: 15px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1); cursor: pointer; transition: transform 0.3s, box-shadow 0.3s; }
@@ -24,7 +42,18 @@
     .dish-card h3 { margin: 10px 0; color: #c46b34; }
     .dish-card p { margin: 5px 10px 10px; font-size: 0.95rem; }
 
-    .selected-container { display: none; max-width: 900px; margin: 40px auto; display: flex; flex-wrap: wrap; gap: 40px; justify-content: center; align-items: flex-start; }
+    /* Selected Dish Section */
+    .selected-container {
+      display: none; /* hidden initially */
+      opacity: 0;    /* invisible initially */
+      max-width: 900px;
+      margin: 40px auto;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: center;
+      align-items: flex-start;
+      transition: opacity 0.5s ease; /* smooth fade-in */
+    }
     .dish-image { flex: 1 1 300px; text-align: center; }
     .dish-image img { width: 100%; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
     .dish-details { flex: 1 1 400px; background-color: #fff5e8; border-radius: 15px; padding: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
@@ -47,6 +76,17 @@
   <img src="images/restaurantlogo.jpg" alt="Masala Chai Cape Town Logo" class="logo">
   <h1>Masala Chai Cape Town</h1>
 </header>
+
+<!-- Navigation Menu -->
+<nav>
+  <a href="main-meals.html">Main Meals</a>
+  <a href="starters.html">Starters</a>
+  <a href="desserts.html">Desserts</a>
+  <a href="sides.html">Sides</a>
+  <a href="orderpage.html">Order</a>
+  <a href="customernotes.html">Notes</a>
+  <a href="thankyou.html">Thank You</a>
+</nav>
 
 <div class="menu-container">
   <div class="dish-card" data-dish="breyani">
@@ -80,7 +120,7 @@
   </div>
 
   <div class="dish-card" data-dish="halfmoon">
-    <img src="images/halmoon2.jpg" alt="Half Moon">
+    <img src="images/halfmoon2.jpg" alt="Half Moon">
     <h3>Half Moon</h3>
     <p>Delicate crescent-shaped pastries, lightly fried and filled.</p>
   </div>
@@ -104,6 +144,7 @@
   </div>
 </div>
 
+<!-- Selected Dish Section -->
 <div class="selected-container" id="selected-container">
   <div class="dish-image">
     <img src="" alt="Selected Dish" id="selected-image">
@@ -139,7 +180,7 @@ const dishes = {
   beefburger: { name: "Beef Burger", description: "Juicy beef patty with fresh toppings.", price: "R85", size: "1 burger", image: "images/beefburger1.jpg", extras: ["Potato Fries", "Sweet Potato Fries"] },
   samoosa: { name: "Samoosa", description: "Golden triangular pastries with a spiced filling.", price: "R25", size: "2 pieces", image: "images/samoosa2.jpg", extras: ["Dhania Chutney", "Sweet Chilli Sauce"] },
   dhaltjie: { name: "Dhaltjie", description: "Crispy lentil fritters, lightly spiced, perfect with chutney.", price: "R30", size: "3 pieces", image: "images/dhaltjie3.jpg", extras: ["Dhania Chutney", "Sweet Chilli Sauce"] },
-  halfmoon: { name: "Half Moon", description: "Delicate crescent-shaped pastries, lightly fried and filled.", price: "R28", size: "2 pieces", image: "images/halmoon2.jpg", extras: ["Dhania Chutney", "Sweet Chilli Sauce"] },
+  halfmoon: { name: "Half Moon", description: "Delicate crescent-shaped pastries, lightly fried and filled.", price: "R28", size: "2 pieces", image: "images/halfmoon2.jpg", extras: ["Dhania Chutney", "Sweet Chilli Sauce"] },
   brownie: { name: "Brownie", description: "Rich chocolate brownie served with a hint of nuts.", price: "R35", size: "1 slice", image: "images/brownie3.jpg", extras: ["None"] },
   soji: { name: "Soji", description: "Soft semolina pudding with aromatic spices and syrup.", price: "R30", size: "1 serving", image: "images/soji2.jpg", extras: ["None"] },
   koeksister: { name: "Koeksister", description: "Traditional Cape Malay twisted dough sweet, soaked in syrup.", price: "R25", size: "1 piece", image: "images/koeksister2.jpg", extras: ["None"] }
@@ -174,7 +215,10 @@ document.querySelectorAll(".dish-card").forEach(card => {
       selectedExtras.appendChild(opt);
     });
 
+    // Fade in the selected-container
     selectedContainer.style.display = "flex";
+    setTimeout(() => { selectedContainer.style.opacity = 1; }, 10);
+
     window.scrollTo({ top: selectedContainer.offsetTop - 20, behavior: 'smooth' });
   });
 });
@@ -182,7 +226,6 @@ document.querySelectorAll(".dish-card").forEach(card => {
 
 </body>
 </html>
-
 
 
 
