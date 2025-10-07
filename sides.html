@@ -37,6 +37,12 @@
       object-fit: cover;
       border: 3px solid #f4e3d2;
       box-shadow: 0 4px 12px rgba(196, 107, 52, 0.5);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    header img.logo:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 15px rgba(196, 107, 52, 0.6);
     }
 
     header h1 {
@@ -50,12 +56,12 @@
       margin-bottom: 0;
     }
 
-    /* Navigation links at top */
+    /* Navigation */
     nav {
       background-color: #f5d6a0;
       padding: 10px 0;
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 0; /* Remove white line */
     }
 
     nav a {
@@ -71,6 +77,7 @@
       color: #c46b34;
     }
 
+    /* Hero Section */
     .hero {
       background-color: #c46b34;
       text-align: center;
@@ -95,6 +102,7 @@
       line-height: 1.6;
     }
 
+    /* Dish Cards */
     .menu-items {
       display: flex;
       flex-wrap: wrap;
@@ -159,17 +167,9 @@
       background-color: #a65427;
     }
 
-    footer {
-      background-color: #c46b34;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-    }
-
     a.back-home {
       display: inline-block;
-      margin-top: 20px;
+      margin: 20px auto;
       text-decoration: none;
       color: #c46b34;
       font-weight: bold;
@@ -178,86 +178,104 @@
     a.back-home:hover {
       color: #a65427;
     }
+
+    footer {
+      background-color: #c46b34;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .dish-card { width: 90%; margin: 15px auto; }
+      nav a { display: block; margin: 6px 0; }
+    }
   </style>
 </head>
 <body>
 
-  <header>
-    <img src="images/restaurantlogo.jpg" alt="Masala Chai Cape Town Logo" class="logo">
-    <h1>Masala Chai Cape Town</h1>
-    <p>Traditional Cape Malay Cuisine in the Heart of Cape Town</p>
-  </header>
+<header>
+  <img src="images/restaurantlogo.jpg" alt="Masala Chai Cape Town Logo" class="logo">
+  <h1>Masala Chai Cape Town</h1>
+  <p>Traditional Cape Malay Cuisine in the Heart of Cape Town</p>
+</header>
 
-  <!-- Navigation Menu -->
-  <nav>
-    <a href="main-meals.html">Main Meals</a>
-    <a href="starters.html">Starters</a>
-    <a href="desserts.html">Desserts</a>
-    <a href="sides.html">Sides</a>
-    <a href="order.html">Order</a>
-    <a href="customernotes.html">Notes</a>
-    <a href="thankyou.html">Thank You</a>
-  </nav>
+<!-- Navigation Menu -->
+<nav>
+  <a href="main-meals.html">Main Meals</a>
+  <a href="starters.html">Starters</a>
+  <a href="desserts.html">Desserts</a>
+  <a href="sides.html">Sides</a>
+  <a href="orderpage.html">Order</a>
+  <a href="customernotes.html">Notes</a>
+  <a href="thankyou.html">Thank You</a>
+</nav>
 
-  <section class="hero">
-    <h2>Sides</h2>
-  </section>
+<section class="hero">
+  <h2>Sides</h2>
+</section>
 
-  <section class="intro">
-    <p>Complete your meal with our delicious sides, from freshly baked bread to dipping sauces and crispy fries.</p>
-  </section>
+<section class="intro">
+  <p>Complete your meal with our delicious sides, from freshly baked bread to dipping sauces and crispy fries.</p>
+</section>
 
-  <section class="menu-items">
-    <div class="dish-card">
-      <img src="images/naan.jpg" alt="Naan">
-      <h3>Naan Bread</h3>
-      <p>Soft, fluffy, and freshly baked Indian-style flatbread.</p>
-      <p class="price">R15</p>
-      <a href="order.html" class="btn">Order Now</a>
-    </div>
-
-    <div class="dish-card">
-      <img src="images/roti.jpg" alt="Roti">
-      <h3>Roti</h3>
-      <p>Traditional Cape Malay round flatbread, perfect to scoop up curries.</p>
-      <p class="price">R12</p>
-      <a href="order.html" class="btn">Order Now</a>
-    </div>
-
-    <div class="dish-card">
-      <img src="images/dhaniachutney.jpg" alt="Dhania Chutney">
-      <h3>Dhania Chutney</h3>
-      <p>Fresh coriander-based chutney with a zesty, tangy flavor.</p>
-      <p class="price">R8</p>
-      <a href="order.html" class="btn">Order Now</a>
-    </div>
-
-    <div class="dish-card">
-      <img src="images/sweetchillisauce.jpg" alt="Sweet Chilli Sauce">
-      <h3>Sweet Chilli Sauce</h3>
-      <p>Perfectly balanced sweet and spicy dipping sauce for your meal.</p>
-      <p class="price">R10</p>
-      <a href="order.html" class="btn">Order Now</a>
-    </div>
-
-    <div class="dish-card">
-      <img src="images/potatofries.jpg" alt="Potato Fries">
-      <h3>Potato Fries</h3>
-      <p>Crispy golden fries, freshly cut and fried to perfection.</p>
-      <p class="price">R25</p>
-      <a href="order.html" class="btn">Order Now</a>
-    </div>
-  </section>
-
-  <div style="text-align:center;">
-    <a href="index.html" class="back-home"><i class="fas fa-arrow-left"></i> Back to Home</a>
+<section class="menu-items">
+  <div class="dish-card">
+    <img src="images/naan.jpg" alt="Naan">
+    <h3>Naan Bread</h3>
+    <p>Soft, fluffy, and freshly baked Indian-style flatbread.</p>
+    <p class="price">R15</p>
+    <a href="orderpage.html" class="btn">Order Now</a>
   </div>
 
-  <footer>
-    <p>&copy; 2025 Masala Chai Cape Town | Designed with <i class="fas fa-heart"></i> in Cape Town</p>
-  </footer>
+  <div class="dish-card">
+    <img src="images/roti.jpg" alt="Roti">
+    <h3>Roti</h3>
+    <p>Traditional Cape Malay round flatbread, perfect to scoop up curries.</p>
+    <p class="price">R12</p>
+    <a href="orderpage.html" class="btn">Order Now</a>
+  </div>
+
+  <div class="dish-card">
+    <img src="images/dhaniachutney.jpg" alt="Dhania Chutney">
+    <h3>Dhania Chutney</h3>
+    <p>Fresh coriander-based chutney with a zesty, tangy flavor.</p>
+    <p class="price">R8</p>
+    <a href="orderpage.html" class="btn">Order Now</a>
+  </div>
+
+  <div class="dish-card">
+    <img src="images/sweetchillisauce.jpg" alt="Sweet Chilli Sauce">
+    <h3>Sweet Chilli Sauce</h3>
+    <p>Perfectly balanced sweet and spicy dipping sauce for your meal.</p>
+    <p class="price">R10</p>
+    <a href="orderpage.html" class="btn">Order Now</a>
+  </div>
+
+  <div class="dish-card">
+    <img src="images/potatofries.jpg" alt="Potato Fries">
+    <h3>Potato Fries</h3>
+    <p>Crispy golden fries, freshly cut and fried to perfection.</p>
+    <p class="price">R25</p>
+    <a href="orderpage.html" class="btn">Order Now</a>
+  </div>
+</section>
+
+<div style="text-align:center;">
+  <a href="index.html" class="back-home"><i class="fas fa-arrow-left"></i> Back to Home</a>
+</div>
+
+<footer>
+  <p>&copy; 2025 Masala Chai Cape Town | Designed with <i class="fas fa-heart"></i> in Cape Town</p>
+</footer>
 
 </body>
 </html>
+
+
+
+
 
 
