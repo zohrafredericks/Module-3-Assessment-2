@@ -164,6 +164,68 @@
       background-color: #a65427;
     }
 
+    /* Selected Dish Placeholder like Order Page */
+    .selected-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: center;
+      align-items: flex-start;
+      max-width: 900px;
+      margin: 40px auto;
+      display: none;
+    }
+
+    .dish-image {
+      flex: 1 1 300px;
+      text-align: center;
+    }
+
+    .dish-image img {
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .dish-details {
+      flex: 1 1 400px;
+      background-color: #fff5e8;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .dish-details h2 {
+      color: #c46b34;
+      margin-bottom: 15px;
+    }
+
+    .dish-details p {
+      margin-bottom: 10px;
+      line-height: 1.5;
+    }
+
+    .dish-details .price {
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+    }
+
+    .dish-details .btn {
+      display: inline-block;
+      padding: 12px 20px;
+      background-color: #c46b34;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .dish-details .btn:hover {
+      background-color: #a65427;
+    }
+
     a.back-home {
       display: inline-block;
       margin: 20px auto;
@@ -184,36 +246,9 @@
       margin-top: 40px;
     }
 
-    /* Selected Dish Placeholder */
-    .selected-placeholder {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 20px;
-      border: 2px dashed #c46b34;
-      border-radius: 15px;
-      text-align: center;
-      background-color: #fff0dc;
-    }
-
-    .selected-placeholder img {
-      width: 300px;
-      border-radius: 15px;
-      margin-bottom: 15px;
-    }
-
-    .selected-placeholder p {
-      font-size: 1.1rem;
-      color: #4b2e2e;
-    }
-
-    .selected-placeholder .btn {
-      margin-top: 15px;
-    }
-
     @media (max-width: 768px) {
       .dish-card { width: 90%; margin: 15px auto; }
       nav a { display: block; margin: 6px 0; }
-      .selected-placeholder img { width: 90%; }
     }
   </style>
 </head>
@@ -249,7 +284,6 @@
     <h3>Naan Bread</h3>
     <p>Soft, fluffy, and freshly baked Indian-style flatbread.</p>
     <p class="price">R15</p>
-    <a href="#" class="btn">Order Now</a>
   </div>
 
   <div class="dish-card">
@@ -257,7 +291,6 @@
     <h3>Roti</h3>
     <p>Traditional Cape Malay round flatbread, perfect to scoop up curries.</p>
     <p class="price">R12</p>
-    <a href="#" class="btn">Order Now</a>
   </div>
 
   <div class="dish-card">
@@ -265,7 +298,6 @@
     <h3>Dhania Chutney</h3>
     <p>Fresh coriander-based chutney with a zesty, tangy flavor.</p>
     <p class="price">R8</p>
-    <a href="#" class="btn">Order Now</a>
   </div>
 
   <div class="dish-card">
@@ -273,7 +305,6 @@
     <h3>Sweet Chilli Sauce</h3>
     <p>Perfectly balanced sweet and spicy dipping sauce for your meal.</p>
     <p class="price">R10</p>
-    <a href="#" class="btn">Order Now</a>
   </div>
 
   <div class="dish-card">
@@ -281,7 +312,6 @@
     <h3>Potato Fries</h3>
     <p>Crispy golden fries, freshly cut and fried to perfection.</p>
     <p class="price">R25</p>
-    <a href="#" class="btn">Order Now</a>
   </div>
 
   <div class="dish-card">
@@ -289,17 +319,20 @@
     <h3>Sweet Potato Fries</h3>
     <p>Golden and crispy sweet potato fries, lightly seasoned.</p>
     <p class="price">R30</p>
-    <a href="#" class="btn">Order Now</a>
   </div>
 </section>
 
 <!-- Selected Dish Placeholder -->
-<section class="selected-placeholder" id="selected-placeholder">
-  <img src="" alt="Selected Dish" id="selected-image" style="display:none;">
-  <div class="selected-details" id="selected-details">
-    <p>🍽 Select a Dish to See Details Here</p>
+<section class="selected-container" id="selected-container">
+  <div class="dish-image">
+    <img src="" alt="Selected Dish" id="selected-image">
   </div>
-  <a href="thankyou.html" class="btn" id="placeholder-order-btn" style="display:none;">Place Order</a>
+  <div class="dish-details">
+    <h2 id="selected-name">Select a Dish</h2>
+    <p id="selected-desc">Click any dish above to view details here.</p>
+    <p class="price" id="selected-price"></p>
+    <a href="thankyou.html" class="btn" id="placeholder-order-btn">Place Order</a>
+  </div>
 </section>
 
 <div style="text-align:center;">
@@ -312,26 +345,24 @@
 
 <script>
   const dishCards = document.querySelectorAll('.dish-card');
-  const selectedImage = document.getElementById('selected-image');
-  const selectedDetails = document.getElementById('selected-details');
-  const placeholderOrderBtn = document.getElementById('placeholder-order-btn');
+  const container = document.getElementById('selected-container');
+  const img = document.getElementById('selected-image');
+  const nameEl = document.getElementById('selected-name');
+  const descEl = document.getElementById('selected-desc');
+  const priceEl = document.getElementById('selected-price');
 
   dishCards.forEach(card => {
     card.addEventListener('click', () => {
-      const imgSrc = card.querySelector('img').src;
-      const name = card.querySelector('h3').textContent;
-      const desc = card.querySelector('p').textContent;
-      const price = card.querySelector('.price').textContent;
-
-      selectedImage.src = imgSrc;
-      selectedImage.style.display = 'block';
-      selectedDetails.innerHTML = `<h3>${name}</h3><p>${desc}</p><p class="price">${price}</p>`;
-      
-      // Show the order button
-      placeholderOrderBtn.style.display = 'inline-block';
+      container.style.display = 'flex';
+      img.src = card.querySelector('img').src;
+      nameEl.textContent = card.querySelector('h3').textContent;
+      descEl.textContent = card.querySelector('p').textContent;
+      priceEl.textContent = card.querySelector('.price').textContent;
+      window.scrollTo({ top: container.offsetTop - 20, behavior: 'smooth' });
     });
   });
 </script>
 
 </body>
 </html>
+
