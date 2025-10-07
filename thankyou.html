@@ -8,6 +8,9 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Baloo+2:wght@400;700&display=swap" rel="stylesheet">
 
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <style>
     body {
       font-family: 'Baloo 2', cursive;
@@ -15,36 +18,59 @@
       padding: 0;
       background-color: #fff5e8;
       color: #4b2e2e;
-      text-align: center;
     }
 
     header {
+      text-align: center;
+      padding: 20px;
       background-color: #c46b34;
       color: white;
-      padding: 20px;
     }
 
     header img.logo {
-      width: 100px;
-      border-radius: 50%;
+      width: 130px;
+      height: 130px;
+      border-radius: 15px;
       margin-bottom: 10px;
       filter: brightness(1.2) sepia(0.3) saturate(1.4);
-      opacity: 0.9;
+      opacity: 0.95;
+      object-fit: cover;
+      border: 3px solid #f4e3d2;
+      box-shadow: 0 4px 12px rgba(196, 107, 52, 0.5);
     }
 
     header h1 {
       font-family: 'Righteous', cursive;
-      font-size: 2rem;
+      font-size: 2.5rem;
       margin-bottom: 5px;
+    }
+
+    nav {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      margin: 0 15px;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #a65427;
     }
 
     main {
       margin: 60px auto;
       max-width: 700px;
-      padding: 20px;
+      padding: 30px;
       background-color: #fff0e0;
       border-radius: 15px;
       box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      text-align: center;
     }
 
     main h2 {
@@ -88,13 +114,21 @@
 <header>
   <img src="images/restaurantlogo.jpg" alt="Masala Chai Cape Town Logo" class="logo">
   <h1>Masala Chai Cape Town</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="mainmeals.html">Main Meals</a>
+    <a href="starters.html">Starters</a>
+    <a href="sides.html">Sides</a>
+    <a href="desserts.html">Desserts</a>
+    <a href="orderpage.html">Order</a>
+  </nav>
 </header>
 
 <main>
   <h2>Thank You for Your Order!</h2>
   <p>We have received your order and will start preparing it shortly. We appreciate your support and hope you enjoy your meal!</p>
   <p>Feel free to explore our menu or place another order.</p>
-  <a href="index.html" class="btn-home">Back to Home</a>
+  <a href="index.html" class="btn-home"><i class="fas fa-home"></i> Back to Home</a>
 </main>
 
 <footer>
@@ -104,3 +138,4 @@
 </body>
 </html>
 
+ 
