@@ -55,32 +55,16 @@
       color: #c46b34;
     }
 
-    main {
-      padding: 20px;
-      text-align: center;
-    }
-
-    h2 {
-      font-family: 'Righteous', cursive;
-      color: #c46b34;
-      margin-bottom: 30px;
-    }
-
     .meal-card {
       background-color: #fff5e8;
       border-radius: 15px;
+      width: 250px;
       padding: 20px;
-      margin-bottom: 25px;
-      display: inline-block;
-      width: 300px;
+      margin: 15px;
+      text-align: center;
       box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      display: inline-block;
       vertical-align: top;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .meal-card:hover {
-      transform: scale(1.05);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
     }
 
     .meal-card img {
@@ -90,12 +74,11 @@
     }
 
     .meal-card h3 {
-      color: #c46b34;
       margin-bottom: 10px;
+      color: #c46b34;
     }
 
     .meal-card p {
-      font-size: 1rem;
       margin-bottom: 10px;
     }
 
@@ -121,17 +104,6 @@
       padding: 20px;
       margin-top: 40px;
     }
-
-    @media (max-width: 768px) {
-      .meal-card {
-        width: 90%;
-        margin-bottom: 20px;
-      }
-      nav a {
-        display: block;
-        margin: 6px 0;
-      }
-    }
   </style>
 </head>
 <body>
@@ -154,35 +126,37 @@
   </nav>
 
   <main>
-    <h2><i class="fas fa-drumstick-bite"></i> Main Meals</h2>
+    <section class="meals">
+      <h2><i class="fas fa-drumstick-bite"></i> Main Meals</h2>
 
-    <!-- Butter Chicken Curry -->
-    <div class="meal-card">
-      <img src="images/butterchicken1.jpg" alt="Butter Chicken Curry">
-      <h3>Butter Chicken Curry <i class="fas fa-pepper-hot" title="Spicy"></i> <i class="fas fa-star" title="Chef’s Special"></i></h3>
-      <p>Rich and creamy Butter Chicken Curry served with your choice of <strong>Naan</strong> or <strong>Roti</strong>.</p>
-      <p>Serving Size: 1 plate | Price: R120</p>
-      <a href="order.html" class="btn"><i class="fas fa-cart-plus"></i> Order Now</a>
-    </div>
+      <!-- Butter Chicken Curry -->
+      <div class="meal-card">
+        <img src="images/butterchicken1.jpg" alt="Butter Chicken Curry">
+        <h3>Butter Chicken Curry <i class="fas fa-pepper-hot" title="Spicy"></i> <i class="fas fa-star" title="Chef’s Special"></i></h3>
+        <p>Rich and creamy Butter Chicken Curry served with your choice of <strong>Naan</strong> or <strong>Roti</strong>.</p>
+        <p>Serving Size: 1 plate | Price: R120</p>
+        <a href="order.html" class="btn"><i class="fas fa-cart-plus"></i> Order Now</a>
+      </div>
 
-    <!-- Cape Malay Breyani -->
-    <div class="meal-card">
-      <img src="images/breyani1.jpg" alt="Cape Malay Breyani">
-      <h3>Cape Malay Breyani <i class="fas fa-pepper-hot" title="Spicy"></i></h3>
-      <p>Traditional Cape Malay Breyani with tender meat, fragrant rice, and exotic spices. Comes with salad.</p>
-      <p>Serving Size: 1 plate | Price: R110</p>
-      <a href="order.html" class="btn"><i class="fas fa-cart-plus"></i> Order Now</a>
-    </div>
+      <!-- Cape Malay Breyani -->
+      <div class="meal-card">
+        <img src="images/breyani1.jpg" alt="Cape Malay Breyani">
+        <h3>Cape Malay Breyani <i class="fas fa-pepper-hot" title="Spicy"></i></h3>
+        <p>Traditional Cape Malay Breyani with tender meat, fragrant rice, and exotic spices. Comes with salad.</p>
+        <p>Serving Size: 1 plate | Price: R110</p>
+        <a href="order.html" class="btn"><i class="fas fa-cart-plus"></i> Order Now</a>
+      </div>
 
-    <!-- 100% Beef Burger -->
-    <div class="meal-card">
-      <img src="images/beefburger1.jpg" alt="100% Beef Burger">
-      <h3>100% Beef Burger <i class="fas fa-heart" title="Customer Favorite"></i></h3>
-      <p>Juicy beef burger served with your choice of <strong>Sweet Potato</strong> or <strong>Normal Fries</strong>.</p>
-      <p>Serving Size: 1 burger | Price: R95</p>
-      <a href="order.html" class="btn"><i class="fas fa-cart-plus"></i> Order Now</a>
-    </div>
+      <!-- 100% Beef Burger -->
+      <div class="meal-card">
+        <img src="images/beefburger1.jpg" alt="100% Beef Burger">
+        <h3>100% Beef Burger <i class="fas fa-heart" title="Customer Favorite"></i></h3>
+        <p>Juicy beef burger served with your choice of <strong>Sweet Potato</strong> or <strong>Normal Fries</strong>.</p>
+        <p>Serving Size: 1 burger | Price: R95</p>
+        <a href="order.html" class="btn"><i class="fas fa-cart-plus"></i> Order Now</a>
+      </div>
 
+    </section>
   </main>
 
   <footer>
@@ -192,4 +166,3 @@
 </body>
 </html>
 
-    
