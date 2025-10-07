@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,23 +16,27 @@
       font-family: 'Baloo 2', cursive;
       margin: 0;
       padding: 0;
-      background-color: #f4e3d2; /* soft beige-brown */
+      background-color: #f4e3d2;
       color: #4b2e2e;
     }
 
     header {
       text-align: center;
       padding: 20px;
-      background-color: #c46b34; /* richer brown */
+      background-color: #c46b34;
       color: white;
     }
 
     header img.logo {
-      width: 120px; /* smaller for subtlety */
-      border-radius: 50%;
+      width: 130px;
+      height: 130px;
+      border-radius: 15px;
       margin-bottom: 10px;
       filter: brightness(1.2) sepia(0.3) saturate(1.4);
-      opacity: 0.9;
+      opacity: 0.95;
+      object-fit: cover;
+      border: 3px solid #f4e3d2;
+      box-shadow: 0 4px 12px rgba(196, 107, 52, 0.5);
     }
 
     header h1 {
@@ -47,92 +50,18 @@
       margin-bottom: 0;
     }
 
-    /* Hero section with overlay */
-    .hero {
-      position: relative;
-      background-image: url('images/masala-chai-hero.jpg');
-      background-size: cover;
-      background-position: center;
-      height: 60vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: #fff4e6;
-      padding: 0 20px;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(196, 107, 52, 0.4); /* soft brown overlay */
-      z-index: 1;
-    }
-
-    .hero h2 {
-      position: relative;
-      z-index: 3;
-      font-size: 2.5rem;
-      background-color: rgba(219, 101, 57, 0.6);
-      padding: 15px;
-      border-radius: 10px;
-    }
-
-    /* Steam animation */
-    .steam {
-      position: absolute;
-      bottom: 20px;
-      width: 30px;
-      height: 100px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.2);
-      filter: blur(8px);
-      animation: rise 5s infinite;
-      z-index: 2;
-    }
-
-    .steam:nth-child(2) {
-      left: 45%;
-      animation-delay: 1s;
-    }
-    .steam:nth-child(3) {
-      left: 55%;
-      animation-delay: 2s;
-    }
-    .steam:nth-child(4) {
-      left: 50%;
-      animation-delay: 3s;
-    }
-
-    @keyframes rise {
-      0% {
-        transform: translateY(0) scaleX(1);
-        opacity: 0.2;
-      }
-      50% {
-        transform: translateY(-50px) scaleX(1.2);
-        opacity: 0.5;
-      }
-      100% {
-        transform: translateY(-120px) scaleX(1.5);
-        opacity: 0;
-      }
-    }
-
+    /* ✅ Welcome Section (moved up) */
     .intro {
       text-align: center;
-      padding: 40px 20px;
+      padding: 20px 20px 30px 20px;
+      background-color: #f7e4d0;
+      border-bottom: 3px solid #c46b34;
     }
 
     .intro h2 {
       font-size: 2rem;
       color: #c46b34;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
     }
 
     .intro p {
@@ -142,7 +71,44 @@
       line-height: 1.6;
     }
 
-    /* Categories at the bottom */
+    /* ✅ Sticky Navigation Bar */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: #a65427;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav li {
+      margin: 8px 15px;
+    }
+
+    nav a {
+      color: #fff4e6;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: color 0.3s, background-color 0.3s;
+      padding: 8px 12px;
+      border-radius: 8px;
+      display: inline-block;
+    }
+
+    nav a:hover {
+      background-color: #c46b34;
+      color: #fff;
+    }
+
     .categories {
       background-color: #f7e4d0;
       padding: 60px 20px;
@@ -181,9 +147,7 @@
       box-shadow: 0 8px 20px rgba(0,0,0,0.15);
     }
 
-    .category-card h3 {
-      margin-bottom: 10px;
-    }
+    .category-card h3 { margin-bottom: 10px; }
 
     .category-card p {
       font-size: 0.95rem;
@@ -213,6 +177,22 @@
       padding: 20px;
       margin-top: 40px;
     }
+
+    @media (max-width: 768px) {
+      header h1 { font-size: 1.8rem; }
+      header img.logo { width: 110px; height: 110px; }
+      .intro h2 { font-size: 1.6rem; }
+      .intro p { font-size: 1rem; }
+      .category-grid { flex-direction: column; align-items: center; }
+      .category-card { width: 90%; padding: 30px 15px; }
+      .categories h2 { font-size: 1.8rem; }
+      nav a { font-size: 0.95rem; padding: 6px 10px; }
+    }
+
+    @media (max-width: 480px) {
+      header h1 { font-size: 1.5rem; }
+      .category-card { width: 95%; }
+    }
   </style>
 </head>
 <body>
@@ -223,14 +203,7 @@
     <p>Traditional Cape Malay Cuisine in the Heart of Cape Town</p>
   </header>
 
-  <section class="hero">
-    <h2>Warm Your Soul with Every Sip & Bite</h2>
-    <div class="steam"></div>
-    <div class="steam"></div>
-    <div class="steam"></div>
-    <div class="steam"></div>
-  </section>
-
+  <!-- ✅ Welcome Section moved here -->
   <section class="intro">
     <h2><i class="fas fa-hand-holding-heart"></i> Welcome!</h2>
     <p>
@@ -239,53 +212,60 @@
     </p>
   </section>
 
+  <!-- ✅ Sticky Navigation Bar -->
+  <nav>
+    <ul>
+      <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="main-meals.html"><i class="fas fa-drumstick-bite"></i> Main Meals</a></li>
+      <li><a href="starters.html"><i class="fas fa-seedling"></i> Starters</a></li>
+      <li><a href="desserts.html"><i class="fas fa-ice-cream"></i> Desserts</a></li>
+      <li><a href="sides.html"><i class="fas fa-bread-slice"></i> Sides</a></li>
+      <li><a href="orderpage.html"><i class="fas fa-cart-plus"></i> Order</a></li>
+      <li><a href="customernotes.html"><i class="fas fa-sticky-note"></i> Notes</a></li>
+      <li><a href="thankyou.html"><i class="fas fa-heart"></i> Thank You</a></li>
+    </ul>
+  </nav>
+
   <section class="categories">
     <h2><i class="fas fa-list-alt"></i> Explore Our Menu</h2>
     <div class="category-grid">
 
-      <!-- Main Meals -->
       <div class="category-card">
         <h3><i class="fas fa-drumstick-bite"></i> Main Meals</h3>
         <p>Butter Chicken, Cape Malay Breyani, and 100% Beef Burgers served with fries.</p>
         <a href="main-meals.html" class="btn"><i class="fas fa-utensils"></i> View Menu</a>
       </div>
 
-      <!-- Starters -->
       <div class="category-card">
         <h3><i class="fas fa-seedling"></i> Starters</h3>
         <p>Samoosas, Dhaltjies & Half Moons — crispy, spicy perfection.</p>
         <a href="starters.html" class="btn"><i class="fas fa-leaf"></i> View Menu</a>
       </div>
 
-      <!-- Desserts -->
       <div class="category-card">
         <h3><i class="fas fa-ice-cream"></i> Desserts</h3>
         <p>Sweet endings with Brownies, Koeksisters, and Soji.</p>
         <a href="desserts.html" class="btn"><i class="fas fa-ice-cream"></i> View Menu</a>
       </div>
 
-      <!-- Sides -->
       <div class="category-card">
         <h3><i class="fas fa-carrot"></i> Sides</h3>
         <p>Naan, Roti, Dhania Chutney, Sweet Chilli Sauce & Potato Fries.</p>
         <a href="sides.html" class="btn"><i class="fas fa-bread-slice"></i> View Menu</a>
       </div>
 
-      <!-- Order Page -->
       <div class="category-card">
         <h3><i class="fas fa-shopping-cart"></i> Place Order</h3>
         <p>Ready to enjoy your favorite dish? Place your order here!</p>
         <a href="orderpage.html" class="btn"><i class="fas fa-cart-plus"></i> Order Now</a>
       </div>
 
-      <!-- Customer Notes -->
       <div class="category-card">
         <h3><i class="fas fa-sticky-note"></i> Customer Notes</h3>
         <p>Have special requests or notes for your order? Let us know.</p>
         <a href="customernotes.html" class="btn"><i class="fas fa-pencil-alt"></i> View Notes</a>
       </div>
 
-      <!-- Thank You Page -->
       <div class="category-card">
         <h3><i class="fas fa-thumbs-up"></i> Thank You</h3>
         <p>See our appreciation for your order and support.</p>
@@ -301,4 +281,5 @@
 
 </body>
 </html>
+
 
