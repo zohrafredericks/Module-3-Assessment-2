@@ -21,14 +21,17 @@ header {
   text-align: center;
 }
 
-.logo {
-  width: 250px;
-  height: 250px;
+header img.logo {
+  width: 130px;          /* standardized size */
+  height: 130px;         /* standardized size */
   display: block;
   margin: 0 auto 10px;
-  /* Square logo - no border-radius */
-  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  border-radius: 15px;   /* slightly rounded */
+  box-shadow: 0 4px 12px rgba(196, 107, 52, 0.5);
   object-fit: cover;
+  filter: brightness(1.2) sepia(0.3) saturate(1.4);
+  opacity: 0.95;
+  border: 3px solid #f4e3d2;
 }
 
 .restaurant-name {
@@ -49,8 +52,8 @@ header {
   margin-bottom: 15px;
 }
 
-/* ------------------------------- Intro Section --------------------------------*/
-.intro {
+/* ------------------------------- Intro Section (Homepage Only) --------------------------------*/
+#home .intro {
   background-color: #fff0e0; /* very light orange */
   padding: 30px 15px;
   border-radius: 15px;
@@ -59,12 +62,13 @@ header {
   max-width: 800px;
 }
 
-.welcome, .categories h2 {
+#home .welcome, 
+#home .categories h2 {
   font-family: 'Righteous', cursive;
   color: #a13d2d;
 }
 
-.intro-text {
+#home .intro-text {
   margin-top: 15px;
   font-size: 1.1em;
   line-height: 1.6;
@@ -210,4 +214,7 @@ footer {
     width: 90%;
   }
 }
+
+
+
 
