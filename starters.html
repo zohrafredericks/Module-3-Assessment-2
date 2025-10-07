@@ -20,19 +20,25 @@
       color: #4b2e2e;
     }
 
+    /* ------------------ Header ------------------ */
     header {
       text-align: center;
       padding: 20px;
       background-color: #d9743e;
       color: white;
+      position: relative;
     }
 
     header img.logo {
-      width: 100px;
-      border-radius: 50%;
+      width: 130px;
+      height: 130px;
+      border-radius: 15px;
       margin-bottom: 10px;
       filter: brightness(1.2) sepia(0.3) saturate(1.4);
-      opacity: 0.9;
+      opacity: 0.95;
+      object-fit: cover;
+      border: 3px solid #f4e3d2;
+      box-shadow: 0 4px 12px rgba(196, 107, 52, 0.5);
     }
 
     header h1 {
@@ -43,9 +49,33 @@
 
     header p {
       font-size: 1rem;
-      margin-bottom: 0;
+      margin-bottom: 10px;
     }
 
+    /* ------------------ Navigation ------------------ */
+    nav {
+      background-color: #c46b34;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      padding: 10px 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 15px;
+      border-radius: 8px;
+      transition: background-color 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #b55b27;
+    }
+
+    /* ------------------ Hero ------------------ */
     .hero {
       background-color: #d9743e;
       text-align: center;
@@ -58,6 +88,7 @@
       margin: 0;
     }
 
+    /* ------------------ Intro ------------------ */
     .intro {
       text-align: center;
       padding: 30px 20px;
@@ -70,6 +101,7 @@
       line-height: 1.6;
     }
 
+    /* ------------------ Menu Items ------------------ */
     .menu-items {
       display: flex;
       flex-wrap: wrap;
@@ -133,6 +165,7 @@
       background-color: #b55b27;
     }
 
+    /* ------------------ Footer ------------------ */
     footer {
       background-color: #d9743e;
       color: white;
@@ -152,6 +185,13 @@
     a.back-home:hover {
       color: #b55b27;
     }
+
+    @media(max-width:768px) {
+      nav {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -160,6 +200,15 @@
     <img src="images/restaurantlogo.jpg" alt="Masala Chai Cape Town Logo" class="logo">
     <h1>Masala Chai Cape Town</h1>
     <p>Traditional Cape Malay Cuisine in the Heart of Cape Town</p>
+    <nav>
+      <a href="main-meals.html">Main Meals</a>
+      <a href="starters.html">Starters</a>
+      <a href="desserts.html">Desserts</a>
+      <a href="sides.html">Sides</a>
+      <a href="order.html">Order</a>
+      <a href="customernotes.html">Notes</a>
+      <a href="thankyou.html">Thank You</a>
+    </nav>
   </header>
 
   <section class="hero">
@@ -177,7 +226,7 @@
       <h3>Samoosa</h3>
       <p>Crispy pastry filled with spiced vegetables or meat, fried to golden perfection.</p>
       <p class="price">R25</p>
-      <a href="#" class="btn">Order Now</a>
+      <a href="order.html" class="btn">Order Now</a>
     </div>
 
     <!-- Dhaltjie -->
@@ -186,7 +235,7 @@
       <h3>Dhaltjie</h3>
       <p>Deep-fried lentil fritters, lightly spiced and crunchy on the outside.</p>
       <p class="price">R30</p>
-      <a href="#" class="btn">Order Now</a>
+      <a href="order.html" class="btn">Order Now</a>
     </div>
 
     <!-- Half Moon -->
@@ -195,13 +244,9 @@
       <h3>Half Moon</h3>
       <p>Delicate crescent-shaped pastries with a sweet or savory filling, lightly fried.</p>
       <p class="price">R28</p>
-      <a href="#" class="btn">Order Now</a>
+      <a href="order.html" class="btn">Order Now</a>
     </div>
   </section>
-
-  <div style="text-align:center;">
-    <a href="index.html" class="back-home"><i class="fas fa-arrow-left"></i> Back to Home</a>
-  </div>
 
   <footer>
     <p>&copy; 2025 Masala Chai Cape Town | Designed with <i class="fas fa-heart"></i> in Cape Town</p>
@@ -209,3 +254,6 @@
 
 </body>
 </html>
+
+
+  
