@@ -36,7 +36,7 @@
       opacity: 0.95;
       object-fit: cover;
       border: 3px solid #f4e3d2;
-      box-shadow: 0 4px 12px rgba(196, 107, 52, 0.5);
+      box-shadow: 0 4px 12px rgba(181, 91, 39, 0.5);
     }
 
     header h1 {
@@ -48,6 +48,34 @@
     header p {
       font-size: 1rem;
       margin-bottom: 0;
+    }
+
+    /* ✅ Sticky Navigation Bar */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: #a65427;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    nav a {
+      color: #fff4e6;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 0 12px;
+      font-size: 1.1em;
+      transition: color 0.3s, background-color 0.3s;
+      padding: 8px 12px;
+      border-radius: 8px;
+      display: inline-block;
+    }
+
+    nav a:hover {
+      background-color: #b55b27;
+      color: #fff;
     }
 
     .hero {
@@ -167,6 +195,18 @@
     <p>Traditional Cape Malay Cuisine in the Heart of Cape Town</p>
   </header>
 
+  <!-- ✅ Navigation Menu -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="main-meals.html">Main Meals</a>
+    <a href="starters.html">Starters</a>
+    <a href="desserts.html">Desserts</a>
+    <a href="sides.html">Sides</a>
+    <a href="order.html">Order</a>
+    <a href="customernotes.html">Notes</a>
+    <a href="thankyou.html">Thank You</a>
+  </nav>
+
   <section class="hero">
     <h2>Dessert Specials</h2>
   </section>
@@ -176,7 +216,6 @@
   </section>
 
   <section class="menu-items">
-    <!-- Soji Pudding -->
     <div class="dish-card">
       <img src="images/soji1.jpg" alt="Soji Pudding">
       <h3>Soji Pudding</h3>
@@ -185,7 +224,6 @@
       <a href="order.html" class="btn">Order Now</a>
     </div>
 
-    <!-- Koeksisters -->
     <div class="dish-card">
       <img src="images/koeksister1.jpg" alt="Koeksisters">
       <h3>Koeksisters</h3>
@@ -194,7 +232,6 @@
       <a href="order.html" class="btn">Order Now</a>
     </div>
 
-    <!-- Brownie -->
     <div class="dish-card">
       <img src="images/brownie1.jpg" alt="Chocolate Brownie">
       <h3>Chocolate Brownie</h3>
@@ -215,5 +252,5 @@
 </body>
 </html>
 
-
-
+ 
+    
